@@ -8,9 +8,9 @@
 
 <% unless @grid == [] %>
   <h3> Here is your grid ! Good luck ! </h3>
-  <h4><%= @grid %></h4>
+  <h4><%= @grid.join (" ") %></h4>
   <div class="container">
-    <form action="/score" method="post">
+    <form action="/score" method="get">
       <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
       <label for="result">What's your best shot ?</label>
       <input type="text" id="result" name="answer">
